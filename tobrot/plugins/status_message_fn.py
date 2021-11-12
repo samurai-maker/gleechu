@@ -85,8 +85,11 @@ async def status_message_f(
                     msgg = f"<b>Peers:</b> {file.connections} | <b>Seeders:</b> {file.num_seeders}"
 
                 percentage = int(file.progress_string(0).split('%')[0])
-                prog = "[{0}{1}]".format("".join([FINISHED_PROGRESS_STR for i in range(math.floor(percentage / 5))]),"".join([UN_FINISHED_PROGRESS_STR for i in range(20 - math.floor(percentage / 5))]))
-              
+                prog = "[{0}{1}] \nP: {2}%\n".format(
+                      ''.join([FINISHED_PROGRESS_STR for i in range(math.floor(percentage / 5))]),
+                      ''.join([UN_FINISHED_PROGRESS_STR for i in range(20 - math.floor(percentage / 5))]),
+                      round(percentage, 2))
+     
      
                 
                 msg += f"<b>𝘿𝙊𝙒𝙉𝙇𝙊𝘼𝘿𝙄𝙉𝙂</b>\n"
@@ -94,9 +97,9 @@ async def status_message_f(
                 msg += f"\n<b>➠📂 𝙁𝙞𝙡𝙚</b>: {downloading_dir_name}"
                 msg += "\n"
                 msg += f"\n<b>{prog}</b>"
-                msg += f"\n<b>➠ ⚡️ 𝙨𝙥𝙚𝙚𝙙</b>: {file.download_speed_string()}"
-                msg += f"\n<b>➠ 📡 𝙋𝙧𝙤𝙜𝙧𝙚𝙨𝙨</b>: {file.progress_string()} <b>of</b> {file.total_length_string()}"
-                msg += f"\n<b>➠ ⏳ 𝙀𝙏𝘼:</b> {file.eta_string()}"
+                msg += f"\n<b>➠𝙨𝙥𝙚𝙚𝙙</b>: {file.download_speed_string()}"
+                msg += f"\n<b>➠𝙋𝙧𝙤𝙜𝙧𝙚𝙨𝙨 </b>: {file.progress_string()} <b>of</b> {file.total_length_string()}"
+                msg += f"\n<b>➠ 𝙀𝙏𝘼:</b> {file.eta_string()}"
                 msg += f"\n{msgg}"
                 msg += f"\n<b>➠ ❌ 𝙏𝙤 𝘾𝙖𝙣𝙘𝙚𝙡:</b> <code>/cancel {file.gid}</code>"
                 msg += "\n"
