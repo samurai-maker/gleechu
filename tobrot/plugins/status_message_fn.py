@@ -14,6 +14,7 @@ import traceback
 import psutil
 import math
 from pyrogram.errors import FloodWait, MessageIdInvalid, MessageNotModified
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from tobrot.helper_funcs.admin_check import AdminCheck
 
 from tobrot import (
@@ -85,16 +86,21 @@ async def status_message_f(
 
                 percentage = int(file.progress_string(0).split('%')[0])
                 prog = "[{0}{1}]".format("".join([FINISHED_PROGRESS_STR for i in range(math.floor(percentage / 5))]),"".join([UN_FINISHED_PROGRESS_STR for i in range(20 - math.floor(percentage / 5))]))
-                msg += f"<b>════════════════════════════════</b>\n"
-                msg += f"\n<b>{downloading_dir_name}</b>"
-                msg += f"\n<b>{prog}</b>"
-                msg += f"\n<b>Speed</b>: {file.download_speed_string()}"
-                msg += f"\n<b>Status</b>: {file.progress_string()} <b>of</b> {file.total_length_string()}"
-                msg += f"\n<b>ETA:</b> {file.eta_string()}"
-                msg += f"\n{msgg}"
-                msg += f"\n<b>To Cancel:</b> <code>/cancel {file.gid}</code>"
+                msg += f"<b>𝘿𝙊𝙒𝙉𝙇𝙊𝘼𝘿𝙄𝙉𝙂</b>\n"
                 msg += "\n"
-
+                msg += f"\n<b>➠📂 𝙁𝙞𝙡𝙚</b>: {downloading_dir_name}"
+                msg += "\n"
+                msg += f"\n<b>{prog}</b>"
+                msg += f"\n<b>➠ ⚡️ 𝙨𝙥𝙚𝙚𝙙</b>: {file.download_speed_string()}"
+                msg += f"\n<b>➠ 📡 𝙋𝙧𝙤𝙜𝙧𝙚𝙨𝙨</b>: {file.progress_string()} <b>of</b> {file.total_length_string()}"
+                msg += f"\n<b>➠ ⏳ 𝙀𝙏𝘼:</b> {file.eta_string()}"
+                msg += f"\n{msgg}"
+                msg += f"\n<b>➠ 🗑 𝙂𝙄𝘿:</b> <code>/cancel {file.gid}</code>"
+                msg += "\n"
+        button = []
+        button.append(
+            [pyrogram.InlineKeyboardButton(text="❌ 𝙏𝙤 𝘾𝙖𝙣𝙘𝙚𝙡", url=f"{file.gid}")]
+        )
         hr, mi, se = up_time(time.time() - BOT_START_TIME)
         total, used, free = shutil.disk_usage(".")
         ram = psutil.virtual_memory().percent
