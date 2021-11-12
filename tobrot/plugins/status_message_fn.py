@@ -97,10 +97,7 @@ async def status_message_f(
                 msg += f"\n{msgg}"
                 msg += f"\n<b>➠ 🗑 𝙂𝙄𝘿:</b> <code>/cancel {file.gid}</code>"
                 msg += "\n"
-        button = []
-        button.append(
-            [pyrogram.InlineKeyboardButton(text="❌ 𝙏𝙤 𝘾𝙖𝙣𝙘𝙚𝙡", url=f"{file.gid}")]
-        )
+    
         hr, mi, se = up_time(time.time() - BOT_START_TIME)
         total, used, free = shutil.disk_usage(".")
         ram = psutil.virtual_memory().percent
@@ -108,7 +105,10 @@ async def status_message_f(
         total = humanbytes(total)
         used = humanbytes(used)
         free = humanbytes(free)
-
+        button = []
+        button.append(
+            [pyrogram.InlineKeyboardButton(text="❌ 𝙏𝙤 𝘾𝙖𝙣𝙘𝙚𝙡", url=f"{file.gid}")]
+        )
         ms_g = (
             f"<b>Bot Uptime</b>: <code>{hr} : {mi} : {se}</code>\n"
             f"<b>T:</b> <code>{total}</code> <b>U:</b> <code>{used}</code> <b>F:</b> <code>{free}</code>\n"
