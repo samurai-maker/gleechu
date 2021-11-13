@@ -95,7 +95,6 @@ async def status_message_f(
                 msg += f"<b>𝘿𝙊𝙒𝙉𝙇𝙊𝘼𝘿𝙄𝙉𝙂</b>\n"
                 msg += "\n"
                 msg += f"\n<b>➠📂 𝙁𝙞𝙡𝙚</b>: {downloading_dir_name}"
-                msg += "\n"
                 msg += f"\n<b>{prog}</b>"
                 msg += f"\n<b>➠𝙨𝙥𝙚𝙚𝙙</b>: {file.download_speed_string()}"
                 msg += f"\n<b>➠𝙋𝙧𝙤𝙜𝙧𝙚𝙨𝙨 </b>: {file.progress_string()} <b>of</b> {file.total_length_string()}"
