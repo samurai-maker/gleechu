@@ -103,7 +103,7 @@
 
 ## CREDITS
 
- - [GautamKumar](https://github.com/gautamajay52/TorrentLeech-Gdrive) 😬
+ - [GautamKumar](https://github.com/gautamajay52/TorrentLeech-Gdrive) 😚
  - [SpEcHiDe](https://github.com/SpEcHiDe/PublicLeech) for his wonderful code😚
  - [Rclone Team](https://rclone.org) for theirs awesome tool☁️
  - [Dan Tès](https://telegram.dog/haskell) for his [Pyrogram Library](https://github.com/pyrogram/pyrogram)
