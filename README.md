@@ -3,7 +3,7 @@
 </p>
 
 
-<h4 align="center" > LaZER-DL </h4>
+<h1 align="center" > LaZER-DL </h1>
 
 
 
