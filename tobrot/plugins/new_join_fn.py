@@ -15,12 +15,12 @@ async def new_join_f(client, message):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton('Channel', url='https://t.me/MaxxBots')
+                        InlineKeyboardButton('Channel', url='https://t.me/slogan_98')
                     ]
                 ]
                )
             )
-        # leave chat
+        # leave chat #verthe channel add akkiye aane 
         await client.leave_chat(chat_id=message.chat.id, delete=True)
     # delete all other messages, except for AUTH_CHANNEL
     await message.delete(revoke=True)
